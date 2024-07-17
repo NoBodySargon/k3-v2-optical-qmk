@@ -1,4 +1,4 @@
-﻿/* Copyright 2020 Adam Honse <calcprogrammer1@gmail.com>
+/* Copyright 2020 Adam Honse <calcprogrammer1@gmail.com>
  * Copyright 2020 Dimitris Mantzouranis <d3xter93@gmail.com>
  * Copyright 2022 Pablo Ramirez <jp.ramangulo@gmail.com>
  *
@@ -38,6 +38,9 @@
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
 #define DEBOUNCE 5
+
+/* LED Status indicators */
+#define LED_CAPS_LOCK_PIN D4
 
 /* RGB LED Config */
 #define LED_MATRIX_ROWS MATRIX_ROWS
@@ -96,7 +99,3 @@
 #define ENABLE_RGB_MATRIX_MULTISPLASH
 #define ENABLE_RGB_MATRIX_SOLID_SPLASH
 #define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
-
-//i dont know what this does exactly, this is coming from this issue
-//https://github.com/qmk/qmk_firmware/issues/5585
-#define NO_USB_STARTUP_CHECK = yes
