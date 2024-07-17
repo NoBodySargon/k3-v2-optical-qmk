@@ -10,19 +10,19 @@ jobs:
       - name: Clone SonixQMK
         run: git clone https://github.com/SonixQMK/qmk_firmware.git
       - name: Install qmk deps
-        run: cd qmk_firmware && ./util/qmk_install.sh && python3 -m pip install qmk
+        run: echo "cd qmk_firmware && ./util/qmk_install.sh && python3 -m pip install qmk"
       - name: fix gcc
-        run: sudo bash .github/scripts/update-gcc10-ubuntu.sh
+        run: echo "sudo bash .github/scripts/update-gcc10-ubuntu.sh"
       - name: Install git submodules
-        run: cd qmk_firmware && make git-submodule
+        run: echo "cd qmk_firmware && make git-submodule"
       - name: Copy custom keymaps
-        run: cp -rp keyboards/keychron/k3/keymaps/ansi_nobodys qmk_firmware/keyboards/keychron/k3/keymaps
+        run: ls . && ls qmk_firmware/keyboards/keychron/k3/ && echo " cp -rp keyboards/keychron/k3/keymaps/ansi_nobodys qmk_firmware/keyboards/keychron/k3/keymaps"
       - name: Copy custom config
-        run: cp -rp keyboards/keychron/k3/rgb/config.h qmk_firmware/keyboards/keychron/k3/rgb/config.h
+        run: echo "cp -rp keyboards/keychron/k3/rgb/config.h qmk_firmware/keyboards/keychron/k3/rgb/config.h"
       - name: Compile firmware
-        run: cd qmk_firmware && make keychron/k3/rgb/optical_ansi:ansi_nobodys
+        run: echo "cd qmk_firmware && make keychron/k3/rgb/optical_ansi:ansi_nobodys"
       - name: Upload compiled firmware (build artifact)
-        uses: actions/upload-artifact@v2
+        uses: echo "actions/upload-artifact@v2"
         with:
           name: Keychron K3 QMK Firmware
           path: qmk_firmware/keychron_k3_rgb_optical_ansi_ansi_nobodys.bin
