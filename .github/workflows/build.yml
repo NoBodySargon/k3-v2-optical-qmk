@@ -10,11 +10,11 @@ jobs:
       - name: Clone SonixQMK
         run: git clone https://github.com/SonixQMK/qmk_firmware.git
       - name: Install qmk deps
-        run: cd qmk_firmware && ./util/qmk_install.sh && python3 -m pip install qmk
+        run: cd qmk_firmware && ls
       - name: fix gcc
-        run: sudo bash .github/scripts/update-gcc10-ubuntu.sh
+        run: cd qmk_firmware && ls *
       - name: Install git submodules
-        run: cd qmk_firmware && make git-submodule
+        run: cd qmk_firmware && ls */*
       - name: Copy custom keymaps
         run: ls . && ls qmk_firmware/keyboards/keychron/k3/ &&  cp -rp keyboards/keychron/k3/keymaps/ansi_nobodys qmk_firmware/keyboards/keychron/k3/keymaps
       - name: Copy custom config
