@@ -20,7 +20,7 @@ jobs:
       - name: Copy custom config
         run: cp -rp keyboards/keychron/k3/rgb/config.h qmk_firmware/keyboards/keychron/k3/rgb/config.h
       - name: Compile firmware
-        run: cd qmk_firmware && make keychron/k3/rgb/optical_iso:ansi_nobodys
+        run: cd qmk_firmware && make keychron/k3/rgb/optical_ansi:ansi_nobodys
       - name: Upload compiled firmware (build artifact)
         uses: actions/upload-artifact@v2
         with:
