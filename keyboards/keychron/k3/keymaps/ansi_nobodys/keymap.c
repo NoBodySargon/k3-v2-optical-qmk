@@ -152,20 +152,16 @@ bool dip_switch_update_user(uint8_t index, bool active) {
     case 1: // Connection switch
       // Probably it's not possible to do anything sensible here as switching from Cable to BT requires turning off the board. (BT / OFF / Cable)
       if (active) { // BT mode
-        // do stuff
+        rgblight_disable_noeeprom();
       }
       else { //Cable mode
-        // do stuff
+        rgblight_enable_noeeprom();
       }
       break;
   }
   return true;
 }
 
+
 void keyboard_post_init_user(void) {
-  // Customise these values to desired behaviour
-  // debug_enable = true;
-  // debug_matrix = true;
-  // debug_keyboard = true;
-  // debug_mouse = true;
 }
